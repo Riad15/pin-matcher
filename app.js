@@ -20,6 +20,15 @@ document.getElementById('key-pad').addEventListener('click', function (event) {
         if (pin == 'C') {
             display.value = '';
         }
+        // else {
+        //     const priNumber = display.value;
+        //     const arrToPin = priNumber.split('')
+        //     const lastNumber = arrToPin.pop();
+        //     updatePin = lastNumber.toString();
+
+        //     display.value = updatePin;
+
+        // }
 
     } else {
 
@@ -31,3 +40,19 @@ document.getElementById('key-pad').addEventListener('click', function (event) {
     }
 
 })
+
+function submitBtn() {
+    const randomPin = document.getElementById('display-pin').value;
+    const matchPin = document.getElementById('pin-numbers').value;
+    const succesMsg = document.getElementById('pin-match');
+    const errorMsg = document.getElementById('pin-not-match');
+    if (randomPin == matchPin) {
+        succesMsg.style.display = 'block';
+        errorMsg.style.display = 'none';
+    } else {
+
+        errorMsg.style.display = 'block';
+        succesMsg.style.display = 'none';
+    }
+
+}
